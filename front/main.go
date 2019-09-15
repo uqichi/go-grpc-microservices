@@ -23,6 +23,10 @@ const port = ":8080"
 
 func main() {
 	// 各マイクロサービスのクライアントスタブの生成
+	log.Println(">>>>>>>", os.Getenv("ACTIVITY_SERVICE_ADDR"))
+	log.Println(">>>>>>>", os.Getenv("PROJECT_SERVICE_ADDR"))
+	log.Println(">>>>>>>", os.Getenv("TASK_SERVICE_ADDR"))
+	log.Println(">>>>>>>", os.Getenv("USER_SERVICE_ADDR"))
 	activityClient := pbActivity.
 		NewActivityServiceClient(getGRPCConn(
 			os.Getenv("ACTIVITY_SERVICE_ADDR"),
