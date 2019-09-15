@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sort"
 
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	"github.com/vvatanabe/go-grpc-microservices/shared/inmemory"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	"github.com/uqichi/go-grpc-microservices/shared/inmemory"
 )
 
 type Store interface {

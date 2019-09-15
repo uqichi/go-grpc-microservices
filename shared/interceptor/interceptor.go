@@ -6,7 +6,7 @@ import (
 
 	"log"
 
-	"github.com/vvatanabe/go-grpc-microservices/shared/md"
+	"github.com/uqichi/go-grpc-microservices/shared/md"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

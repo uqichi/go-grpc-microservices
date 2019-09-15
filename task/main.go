@@ -14,10 +14,10 @@ import (
 	"syscall"
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	pbActivity "github.com/vvatanabe/go-grpc-microservices/proto/activity"
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	pbTask "github.com/vvatanabe/go-grpc-microservices/proto/task"
-	"github.com/vvatanabe/go-grpc-microservices/shared/interceptor"
+	pbActivity "github.com/uqichi/go-grpc-microservices/proto/activity"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	pbTask "github.com/uqichi/go-grpc-microservices/proto/task"
+	"github.com/uqichi/go-grpc-microservices/shared/interceptor"
 	"google.golang.org/grpc"
 )
 

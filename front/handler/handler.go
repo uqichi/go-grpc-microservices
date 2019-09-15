@@ -11,13 +11,13 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/gorilla/mux"
-	"github.com/vvatanabe/go-grpc-microservices/front/session"
-	"github.com/vvatanabe/go-grpc-microservices/front/support"
-	"github.com/vvatanabe/go-grpc-microservices/front/template"
-	pbActivity "github.com/vvatanabe/go-grpc-microservices/proto/activity"
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	pbTask "github.com/vvatanabe/go-grpc-microservices/proto/task"
-	pbUser "github.com/vvatanabe/go-grpc-microservices/proto/user"
+	"github.com/uqichi/go-grpc-microservices/front/session"
+	"github.com/uqichi/go-grpc-microservices/front/support"
+	"github.com/uqichi/go-grpc-microservices/front/template"
+	pbActivity "github.com/uqichi/go-grpc-microservices/proto/activity"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	pbTask "github.com/uqichi/go-grpc-microservices/proto/task"
+	pbUser "github.com/uqichi/go-grpc-microservices/proto/user"
 )
 
 type FrontServer struct {

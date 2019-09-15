@@ -5,9 +5,9 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/empty"
-	pbActivity "github.com/vvatanabe/go-grpc-microservices/proto/activity"
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	"github.com/vvatanabe/go-grpc-microservices/shared/md"
+	pbActivity "github.com/uqichi/go-grpc-microservices/proto/activity"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	"github.com/uqichi/go-grpc-microservices/shared/md"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

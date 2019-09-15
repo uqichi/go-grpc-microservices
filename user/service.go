@@ -6,9 +6,9 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	"golang.org/x/crypto/bcrypt"
 
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	pbUser "github.com/vvatanabe/go-grpc-microservices/proto/user"
-	"github.com/vvatanabe/go-grpc-microservices/shared/md"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	pbUser "github.com/uqichi/go-grpc-microservices/proto/user"
+	"github.com/uqichi/go-grpc-microservices/shared/md"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

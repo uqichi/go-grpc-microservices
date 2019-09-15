@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	pbUser "github.com/vvatanabe/go-grpc-microservices/proto/user"
-	"github.com/vvatanabe/go-grpc-microservices/shared/inmemory"
+	pbUser "github.com/uqichi/go-grpc-microservices/proto/user"
+	"github.com/uqichi/go-grpc-microservices/shared/inmemory"
 )
 
 type Store interface {

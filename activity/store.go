@@ -6,8 +6,8 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/any"
-	pbActivity "github.com/vvatanabe/go-grpc-microservices/proto/activity"
-	"github.com/vvatanabe/go-grpc-microservices/shared/inmemory"
+	pbActivity "github.com/uqichi/go-grpc-microservices/proto/activity"
+	"github.com/uqichi/go-grpc-microservices/shared/inmemory"
 )
 
 type Store interface {

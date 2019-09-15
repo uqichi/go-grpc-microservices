@@ -10,9 +10,9 @@ import (
 	"time"
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	pbProject "github.com/vvatanabe/go-grpc-microservices/proto/project"
-	pbUser "github.com/vvatanabe/go-grpc-microservices/proto/user"
-	"github.com/vvatanabe/go-grpc-microservices/shared/interceptor"
+	pbProject "github.com/uqichi/go-grpc-microservices/proto/project"
+	pbUser "github.com/uqichi/go-grpc-microservices/proto/user"
+	"github.com/uqichi/go-grpc-microservices/shared/interceptor"
 	"google.golang.org/grpc"
 )
 
