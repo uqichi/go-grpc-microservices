@@ -1,16 +1,18 @@
-ARG GOBIN=/go/bin
-
 FROM golang:1.12.5-alpine3.9
 
-WORKDIR /go/src/app
-ENV GO111MODULE on
 RUN apk update && \
-    apk add git make gcc g++
-COPY . /go/src/app
+    apk add git gcc g++
+ENV PKG_PATH /go/src/github.com/uqichi/go-grpc-microservices
+ENV SERVICE_PATH $PKG_PATH/project
+ENV GO111MODULE on
+WORKDIR $PKG_PATH
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
-RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o $GOBIN/project
+COPY . $PKG_PATH
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go install $SERVICE_PATH
 
 FROM alpine:3.9
 ENV TZ Asia/Tokyo
-COPY --from=0 $GOBIN/project /go/bin/project
+COPY --from=0 /go/bin/project /go/bin/project
 ENTRYPOINT ["/go/bin/project"]
