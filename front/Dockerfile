@@ -12,10 +12,6 @@ RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o $GOBIN/fr
 
 FROM alpine:3.9
 ENV TZ Asia/Tokyo
-ENV ACTIVITY_SERVICE_ADDR activity:50051
-ENV PROJECT_SERVICE_ADDR project:50051
-ENV USER_SERVICE_ADDR user-service.user.svc.cluster.local
-ENV TASK_SERVICE_ADDR task:50051
 COPY --from=0 $GOBIN/front /go/bin/front
 COPY static /static
 COPY template /template
