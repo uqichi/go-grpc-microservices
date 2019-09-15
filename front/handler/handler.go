@@ -2,7 +2,6 @@ package handler
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -43,18 +42,15 @@ func (s *FrontServer) Signup(
 			Password: []byte(r.Form.Get("password")),
 		})
 	if err != nil {
-		log.Println("Signup >>>>>", err)
 		http.Error(w,
 			http.StatusText(http.StatusBadRequest),
 			http.StatusBadRequest)
 		return
 	}
-	log.Println("Signup >>>>> >", err)
 	sessionID := session.ID()
 	s.SessionStore.Set(sessionID,
 		resp.GetUser().GetId())
 	session.SetSessionIDToResponse(w, sessionID)
-	log.Println("Signup >>>>> >>", err)
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
@@ -69,15 +65,12 @@ func (s *FrontServer) Login(w http.ResponseWriter, r *http.Request) {
 		Password: []byte(r.Form.Get("password")),
 	})
 	if err != nil {
-		log.Println("Login >>>>>", err)
 		http.Redirect(w, r, "/", http.StatusFound)
 		return
 	}
-	log.Println("Login >>>>> >", err)
 	sessionID := session.ID()
 	s.SessionStore.Set(sessionID, resp.User.Id)
 	session.SetSessionIDToResponse(w, sessionID)
-	log.Println("Login >>>>> >>", err)
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
@@ -268,7 +261,6 @@ func (s *FrontServer) ViewHome(
 	activityResp, err := s.ActivityClient.
 		FindActivities(ctx, &in)
 	if err != nil {
-		log.Println("Viewhome 1>>>>>", err)
 		http.Error(w,
 			http.StatusText(http.StatusBadRequest),
 			http.StatusBadRequest)
@@ -277,7 +269,6 @@ func (s *FrontServer) ViewHome(
 	projectResp, err := s.ProjectClient.
 		FindProjects(ctx, &in)
 	if err != nil {
-		log.Println("Viewhome 2>>>>>", err)
 		http.Error(w,
 			http.StatusText(http.StatusBadRequest),
 			http.StatusBadRequest)
@@ -286,7 +277,6 @@ func (s *FrontServer) ViewHome(
 	taskResp, err := s.TaskClient.
 		FindTasks(ctx, &in)
 	if err != nil {
-		log.Println("Viewhome 3>>>>>", err)
 		http.Error(w,
 			http.StatusText(http.StatusBadRequest),
 			http.StatusBadRequest)
