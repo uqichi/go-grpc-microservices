@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"database/sql"
+	"log"
+	"os"
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/empty"
@@ -17,6 +19,7 @@ type ActivityService struct {
 
 func (s *ActivityService) CreateActivity(ctx context.Context,
 	req *pbActivity.CreateActivityRequest) (*empty.Empty, error) {
+	log.Println(">>>", os.Getenv("KUBERNETES_SERVICE_HOST"), os.Getenv("ACTIVITY_SERVICE_SERVICE_HOST"), os.Getenv("HOSTNAME"))
 	userID := md.GetUserIDFromContext(ctx)
 	if _, err := s.store.CreateActivity(&pbActivity.Activity{
 		Content:   req.Content,
@@ -30,6 +33,7 @@ func (s *ActivityService) CreateActivity(ctx context.Context,
 
 func (s *ActivityService) FindActivities(ctx context.Context,
 	_ *empty.Empty) (*pbActivity.FindActivitiesResponse, error) {
+	log.Println(">>>", os.Getenv("KUBERNETES_SERVICE_HOST"), os.Getenv("ACTIVITY_SERVICE_SERVICE_HOST"), os.Getenv("HOSTNAME"))
 	userID := md.GetUserIDFromContext(ctx)
 	activities, err := s.store.FindActivities(userID)
 	if err != nil {
