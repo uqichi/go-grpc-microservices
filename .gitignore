@@ -13,3 +13,4 @@
 
 # intellij
 .idea
+.envrc
